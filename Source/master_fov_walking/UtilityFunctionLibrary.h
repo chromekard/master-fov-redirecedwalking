@@ -21,6 +21,9 @@ class MASTER_FOV_WALKING_API UUtilityFunctionLibrary : public UBlueprintFunction
     UFUNCTION(BlueprintCallable, BlueprintPure, Category = "Utlility")
     static float GetSignedAngle(FVector prevDir, FVector currDir);
 
+    UFUNCTION(BlueprintCallable, BlueprintPure, Category = "Utlility")
+    static bool DoesFileExist(FString filename);
+
     /** Saves text to filename of your choosing, make sure include whichever file extension you want in the filename,
     ex: SelfNotes.txt . Make sure to include the entire file path in the save directory, ex: C:\MyGameDir\BPSavedTextFiles */
     UFUNCTION(BlueprintCallable, Category = "Victory BP Library|File IO")

@@ -15,6 +15,11 @@ float UUtilityFunctionLibrary::GetSignedAngle(FVector prevDir, FVector currDir)
     return FMath::Sign(FVector::CrossProduct(prevDir, currDir).Z) * FMath::RadiansToDegrees(acosf(FVector::DotProduct(prevDir, currDir)));
 }
 
+bool UUtilityFunctionLibrary::DoesFileExist(FString filename)
+{
+    return FPaths::FileExists(filename);
+}
+
 bool UUtilityFunctionLibrary::FileIO__SaveStringTextToFile(
     FString SaveDirectory,
     FString JoyfulFileName,
