@@ -19,6 +19,9 @@ class MASTER_FOV_WALKING_API UUtilityFunctionLibrary : public UBlueprintFunction
     static FVector FlattenPos3D(FVector vec, float height = 0);
 
     UFUNCTION(BlueprintCallable, BlueprintPure, Category = "Utlility")
+    static FVector FlattenDir3D(FVector vec);
+
+    UFUNCTION(BlueprintCallable, BlueprintPure, Category = "Utlility")
     static float GetSignedAngle(FVector prevDir, FVector currDir);
 
     UFUNCTION(BlueprintCallable, BlueprintPure, Category = "Utlility")

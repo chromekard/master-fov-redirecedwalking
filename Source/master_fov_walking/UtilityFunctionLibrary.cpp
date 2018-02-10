@@ -10,6 +10,11 @@ FVector UUtilityFunctionLibrary::FlattenPos3D(FVector vec, float height)
     return FVector(vec.X, vec.Y, height);
 }
 
+FVector UUtilityFunctionLibrary::FlattenDir3D(FVector vec)
+{
+    return FVector(vec.X, vec.Y, 0).GetSafeNormal();
+}
+
 float UUtilityFunctionLibrary::GetSignedAngle(FVector prevDir, FVector currDir)
 {
     return FMath::Sign(FVector::CrossProduct(prevDir, currDir).Z) * FMath::RadiansToDegrees(acosf(FVector::DotProduct(prevDir, currDir)));
