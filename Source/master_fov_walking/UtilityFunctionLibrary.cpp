@@ -56,7 +56,10 @@ bool UUtilityFunctionLibrary::FileIO__SaveStringTextToFile(
     return FFileHelper::SaveStringToFile(SaveText, *SaveDirectory);
 }
 
-bool UUtilityFunctionLibrary::FileIO__LoadStringFromFile(FString FileNameA, FString& SaveTextA)
+bool UUtilityFunctionLibrary::FileIO__LoadStringFromFile(bool RelativePath, FString File, FString& SaveTextA)
 {
-    return FFileHelper::LoadFileToString(SaveTextA, *(FPaths::GameDir() + FileNameA));
+    if(RelativePath)
+        return FFileHelper::LoadFileToString(SaveTextA, *(FPaths::GameDir() + File));
+
+    return FFileHelper::LoadFileToString(SaveTextA, *File);
 }

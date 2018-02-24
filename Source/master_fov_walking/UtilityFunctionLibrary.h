@@ -33,6 +33,6 @@ class MASTER_FOV_WALKING_API UUtilityFunctionLibrary : public UBlueprintFunction
     static bool FileIO__SaveStringTextToFile(FString SaveDirectory, FString JoyfulFileName, FString SaveText, bool AllowOverWriting = false);
 
     UFUNCTION(BlueprintCallable, Category = "Victory BP Library|File IO")
-    static bool FileIO__LoadStringFromFile(FString FileNameA, FString& SaveTextA);
+    static bool FileIO__LoadStringFromFile(bool RelativePath, FString File, FString& SaveTextA);
 	
 };
