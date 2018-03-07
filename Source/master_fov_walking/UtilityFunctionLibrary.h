@@ -35,4 +35,8 @@ class MASTER_FOV_WALKING_API UUtilityFunctionLibrary : public UBlueprintFunction
     UFUNCTION(BlueprintCallable, Category = "Victory BP Library|File IO")
     static bool FileIO__LoadStringFromFile(bool RelativePath, FString File, FString& SaveTextA);
 	
+    /** Change volume of Sound class of your choosing, sets the volume instantly! Returns false if the sound class was not found and volume was not set. */
+    UFUNCTION(BlueprintCallable, Category = "Victory BP Library|Sound")
+    static bool VictorySoundVolumeChange(USoundClass* SoundClassObject, float NewVolume);
+
 };

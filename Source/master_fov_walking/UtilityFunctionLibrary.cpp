@@ -63,3 +63,35 @@ bool UUtilityFunctionLibrary::FileIO__LoadStringFromFile(bool RelativePath, FStr
 
     return FFileHelper::LoadFileToString(SaveTextA, *File);
 }
+
+bool UUtilityFunctionLibrary::VictorySoundVolumeChange(USoundClass* SoundClassObject, float NewVolume)
+{
+    if (!SoundClassObject)
+    {
+        return false;
+    }
+
+    SoundClassObject->Properties.Volume = NewVolume;
+    return true;
+
+    /*
+    FAudioDevice* Device = GEngine->GetAudioDevice();
+    if (!Device || !SoundClassObject)
+    {
+    return false;
+    }
+
+    bool bFound = Device->SoundClasses.Contains(SoundClassObject);
+    if(bFound)
+    {
+    Device->SetClassVolume(SoundClassObject, NewVolume);
+    return true;
+    }
+    return false;
+    */
+
+    /*
+    bool SetBaseSoundMix( class USoundMix* SoundMix );
+
+    */
+}
